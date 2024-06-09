@@ -94,7 +94,7 @@ public class SceneIntro : MonoBehaviour
 
     IEnumerator LyricPart2()
     {
-        blazoLyricText.text = "...";
+        blazoCenterLyricText.text = "...";
         blazoLyricText.text = "Para iniciar o procedimento, você precisa conhecer primeiramente sua ferramenta principal:";
         yield return new WaitForSeconds(6f);
         blazoLyricText.text = "Te apresento a Jumper Gun, ela é uma arma que gera Jumpers no chão ou em paredes. Os Jumpers gerados impulsionam você contra eles,";
