@@ -1,1 +1,1 @@
-# JumperNurons
+# Jumping Neurons
