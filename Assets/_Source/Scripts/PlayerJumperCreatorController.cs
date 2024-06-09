@@ -9,7 +9,7 @@ public class PlayerJumperCreatorController : MonoBehaviour
     [SerializeField]
     GameObject animationToFire;
 
-   public int limitOfJumpers = 2;
+    public int limitOfJumpers = 2;
 
     void Update()
     {

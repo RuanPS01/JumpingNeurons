@@ -17,7 +17,6 @@ public class JumperBehavior : MonoBehaviour
     {
         Rigidbody rigidbody = player.transform.parent.gameObject.GetComponent<Rigidbody>();
         rigidbody.velocity = new Vector3(rigidbody.velocity.x, 0f, rigidbody.velocity.z);
-
         rigidbody.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 }
