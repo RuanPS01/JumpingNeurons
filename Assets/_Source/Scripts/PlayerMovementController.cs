@@ -34,6 +34,8 @@ public class PlayerMovementController : MonoBehaviour
 
     Rigidbody rb;
 
+    public AudioSource audioSourceFootsteps;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -85,11 +87,20 @@ public class PlayerMovementController : MonoBehaviour
 
         // on ground
         if (grounded)
+        {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-
-        // in air
-        else if (!grounded)
+            if(!audioSourceFootsteps.isPlaying && verticalInput != 0) audioSourceFootsteps.Play();
+        }
+        else
+        {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+            if (audioSourceFootsteps.isPlaying) audioSourceFootsteps.Pause();
+        }
+
+        if(verticalInput == 0 && horizontalInput == 0)
+        {
+            if (audioSourceFootsteps.isPlaying) audioSourceFootsteps.Pause();
+        }
     }
 
     private void SpeedControl()
