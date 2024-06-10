@@ -9,12 +9,16 @@ public class PlayerJumperCreatorController : MonoBehaviour
     [SerializeField]
     GameObject animationToFire;
 
+    [SerializeField]
+    AudioSource audioSourceShoot;
+
     public int limitOfJumpers = 2;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            audioSourceShoot.Play();
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
